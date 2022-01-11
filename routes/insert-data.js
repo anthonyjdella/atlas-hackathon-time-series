@@ -1,6 +1,4 @@
-const {
-    MongoClient
-} = require('mongodb');
+const {MongoClient} = require('mongodb');
 
 const uri = "mongodb+srv://dbUserAnthony:oAbAcJHGCh3qlf7x@cluster0.9ptvo.mongodb.net/Cluster0?retryWrites=true&w=majority";
 
@@ -48,3 +46,5 @@ async function run() {
 }
 
 run().catch(console.dir);
+
+module.exports = run;
