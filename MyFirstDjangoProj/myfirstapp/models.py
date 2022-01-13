@@ -111,4 +111,4 @@ write_json_to_file(bat_data)
 # Since its a command line tool, use os.system to run it within Python
 # Docs: https://docs.mongodb.com/database-tools/mongoimport/
 # Ref: https://stackoverflow.com/questions/38700051/call-mongoimport-from-python-script
-os.system(f'mongoimport --uri "mongodb+srv://dbUserAnthony:oAbAcJHGCh3qlf7x@cluster0.9ptvo.mongodb.net/Bat_DB?retryWrites=true&w=majority" --collection Bat_Collection --drop --file ./output.json --jsonArray')
+os.system(f'mongoimport --uri "mongodb+srv://{SECRET_USER}:{SECRET_PASS}@cluster0.9ptvo.mongodb.net/Bat_DB?retryWrites=true&w=majority" --collection Bat_Collection --drop --file ./output.json --jsonArray')
