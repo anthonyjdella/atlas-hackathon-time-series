@@ -20,6 +20,9 @@ SECRET_PASS = os.getenv("MONGODBPASS")
 # Connect to my MongoClient using the database username and password of an Atlas user that was created
 my_mongo_client = pymongo.MongoClient('mongodb+srv://{SECRET_USER}:{SECRET_PASS}@cluster0.9ptvo.mongodb.net/Cluster0?retryWrites=true&w=majority')
 
+my_mongo_db = my_mongo_client['Bat_DB']
+my_mongo_collection = my_mongo_db['bat_test_collection']
+
 
 def get_json_response(study_id):
 	"""
@@ -27,8 +30,7 @@ def get_json_response(study_id):
 	"""
 	gps_events = get_individual_events(study_id, 653)
 	json_response = gps_events
-	# json_response = convert_to_json(gps_events)
-	# print(json_response)
+	# json_response = convert_to_json_string(gps_events)
 	return json_response
 
 
@@ -43,7 +45,6 @@ def get_individual_events(study_id, sensor_type_id):
 		('attributes', 'all')
 	)
 	events = call_movebank_api(params)
-
 	if len(events) > 0:
 		return list(csv.DictReader(io.StringIO(events), delimiter=','))
 	return []
@@ -78,9 +79,9 @@ def call_movebank_api(params):
 	return ''
 
 
-def convert_to_json(l):
+def convert_to_json_string(l):
 	"""
-	Converts to JSON
+	Converts to JSON String
 	"""
 	return json.dumps(l, indent=2)
 
@@ -101,6 +102,10 @@ load_dotenv()
 # Study ID: 312057662, is for Free-Tailed Bats 
 # (https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study312057662)
 bat_data = get_json_response(312057662)
+
+
+# Rename JSON keys
+# bat_data_time_series = bat_data.replace('individual_local_identifier','bat_id').replace('tag_local_identifier','tag_id')
 
 
 # Call to prettify JSON and put it in a separate file
