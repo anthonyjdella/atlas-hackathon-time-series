@@ -43,6 +43,13 @@ What I completed:
 
 ---
 
+
+### Run
+`pip install -r requirements.txt` - install dependencies
+
+`python manage.py runserver` - start the server
+---
+
 ### Documentation
 
 The data handling is in `myfirstapp/models.py`. I have included detailed comments in the code to explain what I'm doing.
