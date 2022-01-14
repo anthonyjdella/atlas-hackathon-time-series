@@ -48,6 +48,7 @@ What I completed:
 `pip install -r requirements.txt` - install dependencies
 
 `python manage.py runserver` - start the server
+
 ---
 
 ### Documentation
