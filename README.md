@@ -6,7 +6,7 @@
 
 ---
 
-💚 This is my submission for the [MongoDB Atlas Hackathon](https://dev.to/devteam/announcing-the-mongodb-atlas-hackathon-on-dev-4b6m) on DEV. The category is "Prime Time" for [Time Series Collections]( v).
+💚 This is my submission for the [MongoDB Atlas Hackathon](https://dev.to/devteam/announcing-the-mongodb-atlas-hackathon-on-dev-4b6m) on DEV. The category is "Prime Time" for [Time Series Collections]( v). You can view my submission [here](https://dev.to/anthonyjdella/bat-tracker-mongodb-atlas-time-series-5df2).
 
 ---
 ### Disclaimer
